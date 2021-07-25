@@ -133,3 +133,32 @@ Elementos de um array são somente propriedades de objetos, da forma que toStrin
 ```
 console.log(arr.0); // um erro de sintaxe
 ```
+
+Não há nada de especial a respeito de arrays JavaScript e suas propriedades que causam isso. As propriedades JavaScript que começam com um dígito não podem ser referenciadas com notação de ponto. Elas necesitam usar notação de colchetes para poderem ser acessadas. Por exemplo, se você tivesse um objeto com a propriedade "3d", também teria que ser referenciá-la usando notação de colchetes. Por exemplo:
+
+```
+let anos = [1950, 1960, 1970, 1980, 1990, 2000, 2010];
+console.log(anos.0); // um erro de sintaxe
+console.log(anos[0]); // funciona corretamente
+```
+```
+renderer.3d.setTexture(model, 'personagem.png'); // um erro de sintaxe
+renderer['3d'].setTexture(model, 'personagem.png'); //funciona corretamente
+```
+
+Note que no exemplo 3d, '3d' teve de ser colocado entre aspas. É possivel também colocar entre aspas os índices de arrays JavaScript (ou seja, years['2'] ao invés de years[2]), contudo isto não é necessário. O valor 2 em years[2] eventualmente será convertido a uma string pela engine do JavaScript  através de uma conversão explicita com o método toString. E é por esta razão que  '2' e '02' irão referenciar dois slots diferentes no objeto anos e o seguinte exemplo pode ser true:
+
+```
+console.log(anos['2'] != anos['02']);
+```
+
+De forma similar, propriedades de objeto que sejam palavras reservadas(!) só podem ser acessadas como strings em notação de colchetes:
+
+```
+let promessa = {
+  'var': 'texto',
+  'array': [1, 2, 3, 4]
+};
+
+console.log(promessa['var']);
+```
