@@ -39,3 +39,59 @@ frutas.forEach(function(valor,index,array){
 ```
 let adicionar = frutas.push('Laranja') //A função add o elemento novo na ultima posição do array 
 ```
+
+### Remover um item do final do Array
+
+```
+let ultimo = frutas.pop() //Esta função remove o ultimo elemento de um array
+```
+
+### Remover do início do Array 
+```
+let primeiro = frutas.shitf() //Remove o primeiro item
+```
+
+### Adicionar ao inicio do Array
+
+```
+let adicionar = frutas.unshift('Morango') // Adiciona morango na posição 0
+```
+
+### Procurar o índice de um item na Array
+
+```
+let frutas = ['Morango','Banana','Manga']
+let indexDoArray = frutas.indexOf('Manga')
+//--> 1
+```
+
+### Remover um item pela posição do índice
+
+```
+let removeItem = frutas.split(indexDoArray,1)
+```
+
+### Remover itens de uma posição de índice
+
+```
+let vegetais = ['Repolho','Nabo','Rabanete','Cenoura']
+
+let posiIni = 1;
+let posiFi = 2; 
+
+let itensRemovidos = vegetais.splice(posiIni,posiFi) //Apagar um array a partir da posiIni ate posiFi
+
+console.log(vegetais)
+
+//--> ['Repolho','Cenoura']
+```
+
+### Copiar um Array
+
+```
+let frutas = ['Morango','Manga']
+let copiar = frutas.slice() //Função para fazer copias de array
+
+console.log(copia)
+//--> ['Morango','Manga'] 
+```
