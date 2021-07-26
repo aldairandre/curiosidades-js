@@ -2,6 +2,7 @@
 
 O objeto Array do JavaScript é um objeto global usado na construção de 'arrays': objetos de alto nível semelhantes a listas.
 
+
 <br>
 
 ### Criando um Array
@@ -117,3 +118,13 @@ Arrays são objetos semelhantes a listas que vêm com uma série de métodos emb
 
 Arrays não podem usar strings como índices (como em um array associativo), devem ser usados números inteiros. Definir ou acessar não-inteiros usando notação de colchetes (ou notação de ponto) não vai definir ou recuperar um elemento do array em si, mas sim definir ou acessar uma variável associada com a coleção de propriedades de objeto daquele array. As propriedades de objeto do array e a lista de elementos do array são separados, e as operações de travessia e mutação não podem ser aplicadas a essas propriedades nomeadas.
 
+# Accessando elementos de um array 
+
+Arrays JavaScript começam com índice zero: o primeiro elemento de um array está na posição 0 e o último elemento está na  posição equivalente ao valor da propriedade length (tamanho) menos 1.
+
+```
+let array = ['este é o primeiro elemento', 'este é o segundo elemento'];
+console.log(array[0]) // // exibe 'este é o primeiro elemento'
+console.log(array[1]);              // exibe 'este é o segundo elemento'
+console.log(array[array.length - 1]); // exibe 'este é o segundo elemento'
+```
