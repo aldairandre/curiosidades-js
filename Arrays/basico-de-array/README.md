@@ -2,6 +2,7 @@
 
 O objeto Array do JavaScript é um objeto global usado na construção de 'arrays': objetos de alto nível semelhantes a listas.
 
+
 <br>
 
 ### Criando um Array
@@ -156,6 +157,7 @@ De forma similar, propriedades de objeto que sejam palavras reservadas(!) só po
 
 ```
 let promessa = {
+let proromessa = {
   'var': 'texto',
   'array': [1, 2, 3, 4]
 };
