@@ -1,6 +1,7 @@
 # Array
 
 O objeto Array do JavaScript é um objeto global usado na construção de 'arrays': objetos de alto nível semelhantes a listas.
+Artigo original [MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
 
 <br>
@@ -123,6 +124,7 @@ Arrays não podem usar strings como índices (como em um array associativo), dev
 Arrays JavaScript começam com índice zero: o primeiro elemento de um array está na posição 0 e o último elemento está na  posição equivalente ao valor da propriedade length (tamanho) menos 1.
 
 ```
+<<<<<<< HEAD
 let arr = ['este é o primeiro elemento', 'este é o segundo elemento'];
 console.log(arr[0]);              // exibe 'este é o primeiro elemento'
 console.log(arr[1]);              // exibe 'este é o segundo elemento'
@@ -164,3 +166,71 @@ let proromessa = {
 
 console.log(promessa['var']);
 ```
+=======
+let array = ['este é o primeiro elemento', 'este é o segundo elemento'];
+console.log(array[0]) // // exibe 'este é o primeiro elemento'
+console.log(array[1]);              // exibe 'este é o segundo elemento'
+console.log(array[array.length - 1]); // exibe 'este é o segundo elemento'
+```
+
+# Relação entre length e propriedades numéricas
+
+As propriedades length e numéricas de um array Javascript são conectadas. Varios dos métodos javascript pré-definidos (por exemplo, join, slice, indexOf etc.) levam em conta o valor da propriedade length de um array quando eles são chamados. Outros métodos (por exemplo, push, splice etc.) também resultam em uma atualização na propriedade length do array.
+
+```
+let frutas = [];
+frutas.push('Banana','Maça','Pessego');
+
+console.log(frutas.length);
+
+//--> 3
+```
+
+Quando configurar uma propriedade num array Javascript em que a propriedade é um índice valido do array e este índice está fora do atual limite do array, o array irá crescer para um tamanho grande o suficiente para acomodar o elemento neste índice, e a engine irá atualizar a propriedade length do array de acordo com isto:
+
+```
+frutas[5] = 'Manga';
+console.log(frutas[5]);
+console.log(Object.keys(frutas)); //['0','1','2','5']
+console.log(frutas.length) 
+//--> 6
+```
+
+Configurar a propriedade length diretamente, também resulta em um comportamento especial:
+
+```
+frutas.length = 10;
+console.log(Object.keys(frutas)); // ['0', '1', '2', '5']
+console.log(frutas.length); // 10
+```
+
+Diminuir o valor de length, entretanto, apaga elementos:
+
+```
+frutas.length = 2;
+console.log(Object.keys(frutas)); // ['0', '1']
+console.log(frutas.length); // 2
+```
+
+# Criando um array usando o resultado de uma comparação
+
+O resultado de uma comparação entre uma expressão regular e uma string pode criar um array Javascript. Este array tem propriedades e elementos que disponibilizam informações sobre a comparação. Esse array é o valor de retorno dos métodos RegExp.exec, String.match, e String.replace. Para explicar melhor sobre estas propriedades e elementos, veja o seguinte exemplo e então consulte a tabela abaixo:
+
+```
+// Encontra um d seguido por um ou mais b's seguido por um d
+// Salva os b's encontrados e o d seguinte
+// Ignora caixa (maiúscula/minúscula)
+
+var minhaRegex = /d(b+)(d)/i;
+var meuArray = minhaRegex.exec('cdbBdbsbz');
+```
+
+As propriedades e elementos retornados desta comparação são os seguintes:
+
+| Propriedade/Elemento | Descrição Exemplo| Descrição Exemplo|
+| -------------------- | ---------------- | ---------------- |
+| input                | Uma propriedade somente-leitura que reflete a string original a qual a expressão regular foi comparada.|    cdbBdbsbz              |
+| inde                 |   Uma propriedade somente-leitura que é o índice baseado em zero da comparação na string.               |         1         |
+| [0]                  |       Um elemento somente-leitura que especifica os ultimos caracteres que foram encontrados.           |    	dbBd              |
+| [1], ...[n]          |          Elementos somente-leitura que especificam as substrings de comparações entre parênteses encontradas, se incluidas na expressão regular. O número de possíveis substrings entre parenteses é ilimitado.        |   [1]: bB [2]: d       |
+>>>>>>> 84c645a09192148ec6d25da80359bf5b0fd2a473
