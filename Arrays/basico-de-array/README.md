@@ -168,3 +168,17 @@ frutas.length = 2;
 console.log(Object.keys(frutas)); // ['0', '1']
 console.log(frutas.length); // 2
 ```
+
+# Criando um array usando o resultado de uma comparação
+
+O resultado de uma comparação entre uma expressão regular e uma string pode criar um array Javascript. Este array tem propriedades e elementos que disponibilizam informações sobre a comparação. Esse array é o valor de retorno dos métodos RegExp.exec, String.match, e String.replace. Para explicar melhor sobre estas propriedades e elementos, veja o seguinte exemplo e então consulte a tabela abaixo:
+
+```
+// Encontra um d seguido por um ou mais b's seguido por um d
+// Salva os b's encontrados e o d seguinte
+// Ignora caixa (maiúscula/minúscula)
+
+var minhaRegex = /d(b+)(d)/i;
+var meuArray = minhaRegex.exec('cdbBdbsbz');
+
+```
