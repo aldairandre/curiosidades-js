@@ -166,7 +166,7 @@ let proromessa = {
 
 console.log(promessa['var']);
 ```
-=======
+```
 let array = ['este é o primeiro elemento', 'este é o segundo elemento'];
 console.log(array[0]) // // exibe 'este é o primeiro elemento'
 console.log(array[1]);              // exibe 'este é o segundo elemento'
@@ -230,7 +230,6 @@ As propriedades e elementos retornados desta comparação são os seguintes:
 | Propriedade/Elemento | Descrição Exemplo| Descrição Exemplo|
 | -------------------- | ---------------- | ---------------- |
 | input                | Uma propriedade somente-leitura que reflete a string original a qual a expressão regular foi comparada.|    cdbBdbsbz              |
-| inde                 |   Uma propriedade somente-leitura que é o índice baseado em zero da comparação na string.               |         1         |
+| index               |   Uma propriedade somente-leitura que é o índice baseado em zero da comparação na string.               |         1         |
 | [0]                  |       Um elemento somente-leitura que especifica os ultimos caracteres que foram encontrados.           |    	dbBd              |
-| [1], ...[n]          |          Elementos somente-leitura que especificam as substrings de comparações entre parênteses encontradas, se incluidas na expressão regular. O número de possíveis substrings entre parenteses é ilimitado.        |   [1]: bB [2]: d       |
->>>>>>> 84c645a09192148ec6d25da80359bf5b0fd2a473
+| [1], ...[n]          |          Elementos somente-leitura que especificam as substrings de comparações entre parênteses encontradas, se incluidas na expressão regular. O número de possíveis substrings entre parenteses é ilimitado. |[1]: bB [2]: d|
