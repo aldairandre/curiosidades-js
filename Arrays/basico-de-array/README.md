@@ -128,3 +128,42 @@ console.log(array[0]) // // exibe 'este é o primeiro elemento'
 console.log(array[1]);              // exibe 'este é o segundo elemento'
 console.log(array[array.length - 1]); // exibe 'este é o segundo elemento'
 ```
+
+# Relação entre length e propriedades numéricas
+
+As propriedades length e numéricas de um array Javascript são conectadas. Varios dos métodos javascript pré-definidos (por exemplo, join, slice, indexOf etc.) levam em conta o valor da propriedade length de um array quando eles são chamados. Outros métodos (por exemplo, push, splice etc.) também resultam em uma atualização na propriedade length do array.
+
+```
+let frutas = [];
+frutas.push('Banana','Maça','Pessego');
+
+console.log(frutas.length);
+
+//--> 3
+```
+
+Quando configurar uma propriedade num array Javascript em que a propriedade é um índice valido do array e este índice está fora do atual limite do array, o array irá crescer para um tamanho grande o suficiente para acomodar o elemento neste índice, e a engine irá atualizar a propriedade length do array de acordo com isto:
+
+```
+frutas[5] = 'Manga';
+console.log(frutas[5]);
+console.log(Object.keys(frutas)); //['0','1','2','5']
+console.log(frutas.length) 
+//--> 6
+```
+
+Configurar a propriedade length diretamente, também resulta em um comportamento especial:
+
+```
+frutas.length = 10;
+console.log(Object.keys(frutas)); // ['0', '1', '2', '5']
+console.log(frutas.length); // 10
+```
+
+Diminuir o valor de length, entretanto, apaga elementos:
+
+```
+frutas.length = 2;
+console.log(Object.keys(frutas)); // ['0', '1']
+console.log(frutas.length); // 2
+```
