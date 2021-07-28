@@ -35,3 +35,13 @@ Padrões simples são construídos utilizando os caracteres que você deseja enc
 Quando for necessário buscar algo além de uma correspondência direta, como encontrar uma ou mais ocorrências da letra 'b', ou encontrar espaços em branco, será necessário adicionar caracteres especiais ao padrão. Por exemplo, para encontrar uma única correspondência de 'a' seguido de nenhum ou mais 'b's seguido de 'c', o padrão a utilizar seria /ab*c/. O caractere * seleciona zero ou mais ocorrências do item que o precede. Se aplicada ao texto 'cbbabbbbcdebc', essa expressão regular encontraria o subconjunto grifado no texto.
 
 A tabela abaixo fornece uma lista completa dos caracteres especiais que podem ser utilizados nas expressões regulares, com sua respectiva descrição.
+
+| Caractere | Descrição |
+| :----:    | --------- |
+|   \       |      Aplicado conforme as seguintes regras <br>
+
+Uma barra invertida que preceda um caractere não especial significa que o caractere seguinte é especial e não deve ser interpretado de forma literal. Por exemplo, o caractere 'b' quando não precedido de uma barra invertida significará uma ocorrência do próprio caractere 'b' minúsculo, porém se precedido da barra invertida '\b' ele passará a significar a ocorrência do caractere especial fronteira do caractere.
+
+Quando a barra invertida preceder um caractere especial isso significará que o próximo caractere deve ser interpretado de forma literal. Por exemplo o padrão /a*/, que selecionará a ocorrência de zero ou mais caracteres 'a' quando utilizado sem a \ para escape. Por outro lado no padrão /a\*/ o asterisco deixa de ter seu significado especial, pois a '\' de escape fará com que o '*' seja interpretado de forma literal, passando o padrão a selecionar o caractere 'a' seguido do caractere '*'.
+
+Quando utilizar o construtor RegExp("padrao"), não se esqueça de fazer o escape do caractere \, já que esse caractere é também utilizado como caractere de escape em strings.     |
