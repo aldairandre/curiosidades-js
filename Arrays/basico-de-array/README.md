@@ -1,4 +1,4 @@
-# Array
+# **Array**
 
 O objeto Array do JavaScript é um objeto global usado na construção de 'arrays': objetos de alto nível semelhantes a listas.
 Artigo original [MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array)
@@ -88,7 +88,7 @@ console.log(vegetais)
 //--> ['Repolho','Cenoura']
 ```
 
-### Copiar um Array
+### **Copiar um Array**
 
 ```
 let frutas = ['Morango','Manga']
@@ -98,7 +98,7 @@ console.log(copia)
 //--> ['Morango','Manga'] 
 ```
 
-# Sintaxe
+# **Sintaxe**
 
 ```
 [element0, element1, ..., elementN]
@@ -113,13 +113,13 @@ Um array JavaScript é inicializado com os elementos contém, exceto no caso ond
 __arrayLength__
 Se o único argumento passado para o construtor do Array for um número inteiro entre 0 e 232-1 (inclusive), um novo array com o tamanho desse número é retornado. Se o argumento for qualquer outro número, uma exceção RangeError é lançada.
 
-# Descrição
+# **Descrição**
 
 Arrays são objetos semelhantes a listas que vêm com uma série de métodos embutidos para realizar operações de travessia e mutação. Nem o tamanho de um array JavaScript nem os tipos de elementos são fixos. Já que o tamanho de um array pode ser alterado a qualquer momento e os dados podem ser armazenados em posições não contíguas, arrays JavaScript não tem a garantia de serem densos; isso depende de como o programador escolhe usá-los. De uma maneira geral, essas são características convenientes, mas, se esses recursos não são desejáveis para o seu caso em particular, você pode considerar usar arrays tipados.
 
 Arrays não podem usar strings como índices (como em um array associativo), devem ser usados números inteiros. Definir ou acessar não-inteiros usando notação de colchetes (ou notação de ponto) não vai definir ou recuperar um elemento do array em si, mas sim definir ou acessar uma variável associada com a coleção de propriedades de objeto daquele array. As propriedades de objeto do array e a lista de elementos do array são separados, e as operações de travessia e mutação não podem ser aplicadas a essas propriedades nomeadas.
 
-# Accessando elementos de um array 
+# **Accessando elementos de um array** 
 
 Arrays JavaScript começam com índice zero: o primeiro elemento de um array está na posição 0 e o último elemento está na  posição equivalente ao valor da propriedade length (tamanho) menos 1.
 
@@ -173,7 +173,7 @@ console.log(array[1]);              // exibe 'este é o segundo elemento'
 console.log(array[array.length - 1]); // exibe 'este é o segundo elemento'
 ```
 
-# Relação entre length e propriedades numéricas
+# **Relação entre length e propriedades numéricas**
 
 As propriedades length e numéricas de um array Javascript são conectadas. Varios dos métodos javascript pré-definidos (por exemplo, join, slice, indexOf etc.) levam em conta o valor da propriedade length de um array quando eles são chamados. Outros métodos (por exemplo, push, splice etc.) também resultam em uma atualização na propriedade length do array.
 
@@ -212,7 +212,7 @@ console.log(Object.keys(frutas)); // ['0', '1']
 console.log(frutas.length); // 2
 ```
 
-# Criando um array usando o resultado de uma comparação
+# **Criando um array usando o resultado de uma comparação**
 
 O resultado de uma comparação entre uma expressão regular e uma string pode criar um array Javascript. Este array tem propriedades e elementos que disponibilizam informações sobre a comparação. Esse array é o valor de retorno dos métodos RegExp.exec, String.match, e String.replace. Para explicar melhor sobre estas propriedades e elementos, veja o seguinte exemplo e então consulte a tabela abaixo:
 
@@ -233,3 +233,62 @@ As propriedades e elementos retornados desta comparação são os seguintes:
 | index               |   Uma propriedade somente-leitura que é o índice baseado em zero da comparação na string.               |         1         |
 | [0]                  |       Um elemento somente-leitura que especifica os ultimos caracteres que foram encontrados.           |    	dbBd              |
 | [1], ...[n]          |          Elementos somente-leitura que especificam as substrings de comparações entre parênteses encontradas, se incluidas na expressão regular. O número de possíveis substrings entre parenteses é ilimitado. |[1]: bB [2]: d|
+
+# **Propriedades**
+
+**Array.length**
+
+Propriedade comprimento do construtor Array, cujo valor é 1.
+
+`
+get Array[@@species] (en-US)
+`
+
+A função de construtor que é utilizada para criar objetos derivados.
+
+`
+Array.prototype
+`
+
+Permite a adição de propriedades para todos os objetos array.
+
+# **Métodos**
+
+`
+Array.form()
+`
+Cria uma nova instância de Array a partir de um objeto semelhante ou iterável.
+
+`
+Array.isArray()
+`
+
+Retorna true se a variável é um array e false caso contrário.
+
+`
+Array.of()
+`
+
+Cria uma nova instância de Array com um número variável de argumentos, independentemente do número ou tipo dos argumentos.
+
+# **Instâncias de Array**
+
+Todas as instâncias de Array herdam de Array.prototype.  O protótipo do construtor Array pode ser modificado de forma a afetar todas as instâncias de Array.
+
+## **Propriedades**
+
+{{ page('/pt-BR/docs/JavaScript/Reference/Global_Objects/Array/prototype', 'Properties') }}
+
+### **Métodos**
+
+#### Métodos modificadores
+
+{{ page('/pt-BR/docs/JavaScript/Reference/Global_Objects/Array/prototype', 'Mutator_methods') }}
+
+#### Métodos de acesso
+
+{{ page('/pt-BR/docs/JavaScript/Reference/Global_Objects/Array/prototype', 'Accessor_methods') }}
+
+#### Métodos de iteração
+
+{{ page('/pt-BR/docs/JavaScript/Reference/Global_Objects/Array/prototype', 'Iteration_methods') }}
