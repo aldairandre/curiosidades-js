@@ -21,3 +21,8 @@ let re  = new RegExp("ab+c");
 ```
 
 Usando o construtor, a compilação da expressão regular é realizada em tempo de execução. Use o construtor quando souber que o padrão da expressão regular irá mudar ou quando o padrão for desconhecido, oriundo de outra fonte, uma entrada de usuário por exemplo.
+
+# Escrevendo um padrão de expressão regular
+
+Um padrão de expressão é composto por um conjunto de caracteres simples, como /abc/, ou uma combinação de caracteres simples e especiais, como /ab*c/ ou /Capitulo (\d+)\.\d*/. O último exemplo contém parênteses, que são usados como um mecanismo de armazenamento.
+
