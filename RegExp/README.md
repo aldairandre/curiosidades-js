@@ -26,3 +26,6 @@ Usando o construtor, a compilação da expressão regular é realizada em tempo 
 
 Um padrão de expressão é composto por um conjunto de caracteres simples, como /abc/, ou uma combinação de caracteres simples e especiais, como /ab*c/ ou /Capitulo (\d+)\.\d*/. O último exemplo contém parênteses, que são usados como um mecanismo de armazenamento.
 
+## Uso de Padrões Simples
+
+Padrões simples são construídos utilizando os caracteres que você deseja encontrar correspondências diretas. Por exemplo, o padrão /abc/ encontra combinações de caracteres em strings apenas quando os caracteres 'abc' forem encontrados juntos e na ordem especificada. Esse padrão será encontrado com sucesso nas strings "Olá, você conhece o abc?" e "Os mais recentes aviões evoluíram do slabcraft.". Em ambos os casos, a correspondência estará no subconjunto 'abc'. Porém, o padrão não será encontrado no texto "Grab crab" pois apesar de conter os mesmos caractes do padrão 'ab c', estes não aparecem na ordem especificada.
